@@ -21,4 +21,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* 
+
+![Build Status](https://codeship.com/projects/2e1f97a0-9fc9-0135-aed2-2601a296a700/status?branch=master)
+![Code Climate](https://codeclimate.com/github/mikecalex/FundLauncher.png)
+![Coverage Status](https://coveralls.io/repos/mikecalex/FundLauncher/badge.png)
