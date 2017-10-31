@@ -12,4 +12,39 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+ *= require foundation
+
  */
+
+ .top-bar-section ul {
+    width: auto;
+    display: inline;
+    min-height: 45px;
+}
+
+ .top-bar ul.left {
+   width: 50%;
+ }
+
+ .top-bar ul.right {
+   width: 50%;
+ }
+
+ div.login {
+    margin: 0;
+    padding-right: 20px;
+    min-height: 45px;
+    width: 100%;
+}
+
+a.icon {
+    color: white;
+    text-decoration: none;
+    line-height: inherit;
+    font-size: 30px;
+}
+
+.top-bar li.name {
+  font-size: 100px;
+}

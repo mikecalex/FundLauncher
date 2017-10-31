@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>FundLauncher</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    'application', media: 'all'  %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_pack_tag 'application' %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    
-    <% if current_user  %>
-      <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
-      <%= link_to "Logout", logout_path %>
-    <% else %>
-      <%= link_to "Sign in with Google", "/auth/google" %>
-    <% end %>
+    <div class="top-bar" data-topbar role="navigation">
+      <section class="top-bar-section">
+        <ul class= "left">
+          <li class="name"><%= link_to 'FundLauncher', root_path %></li>
+        </ul>
+        <ul class="right">
+          <div class="login">
+            <a href='#' data-reveal-id="firstModal" class="icon" style="float: right;">&#9776;</a>
+            <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
+              <h2 id="firstModalTitle">Welcome to FundLauncher!</h2>
+              <% if current_user  %>
+              <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
+              <%= link_to "Logout", logout_path %>
+              <% else %>
+              <%= link_to "Sign in with Google", "/auth/google" %>
+              <% end %>
+              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
+          </div>
+        </ul>
+        <% if flash.any? %>
+      <div class="flash">
+        <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "callout #{name}" %>
+        <% end %>
+      </div>
+      <% end %>
+
+    </div>
+
     <%= yield %>
+    <%= javascript_include_tag "application" %>
+    <br>
   </body>
 </html>
