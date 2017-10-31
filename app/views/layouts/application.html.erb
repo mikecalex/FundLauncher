@@ -25,7 +25,7 @@
             <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
               <h2 id="firstModalTitle">Welcome to FundLauncher!</h2>
               <% if current_user  %>
-              <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
+              <h3>You're logged in, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
               <%= link_to "Logout", logout_path %>
               <% else %>
               <%= link_to "Sign in with Google", "/auth/google" %>
