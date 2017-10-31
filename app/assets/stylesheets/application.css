@@ -55,3 +55,8 @@ img {
     border-radius: 30%;
     border:2px solid grey;
 }
+
+img.thumbnail {
+  height: 100px;
+  width: 100px
+}
