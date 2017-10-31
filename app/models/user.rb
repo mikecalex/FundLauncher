@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+  has_many :start_ups
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+
   def self.update_or_create(auth)
     user = User.find_by(uid: auth[:uid]) || User.new
     user.attributes = {

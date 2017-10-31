@@ -10,16 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031153441) do
+ActiveRecord::Schema.define(version: 20171031163853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "startups", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "category"
+    t.text "description", null: false
+    t.integer "desired_funding", null: false
+    t.integer "current_funding", null: false
+    t.integer "shares_available", null: false
+    t.integer "user_id"
+    t.string "photo_url", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
-    t.string "first_name"
-    t.string "last_name"
     t.string "email"
     t.string "token"
     t.string "refresh_token"
@@ -27,6 +38,8 @@ ActiveRecord::Schema.define(version: 20171031153441) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "first_name"
+    t.string "last_name"
   end
 
 end
