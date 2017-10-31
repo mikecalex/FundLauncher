@@ -26,7 +26,11 @@
               <h2 id="firstModalTitle">Welcome to FundLauncher!</h2>
               <% if current_user  %>
               <h3><%= "#{current_user.first_name} #{current_user.last_name} " %></h3>
-              <ul id="profile-photo"><%= image_tag current_user.image, { size: "50x80" } %></ul>
+              <ul><% unless current_user.image.nil? %></ul>
+                  <div id="profile-photo-container">
+                    <ul id="profile-photo"><%= image_tag current_user.image %></ul>
+                  </div>
+              <ul><% end %></ul>
               <%= link_to "Logout", logout_path %>
               <% else %>
               <%= link_to "Sign in with Google", "/auth/google" %>
