@@ -48,3 +48,10 @@ a.icon {
 .top-bar li.name {
   font-size: 100px;
 }
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 30%;
+    border:2px solid grey;
+}
