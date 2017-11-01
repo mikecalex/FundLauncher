@@ -60,3 +60,20 @@ img.thumbnail {
   height: 100px;
   width: 100px
 }
+
+img.show {
+  border-radius: 0%;
+  min-height: 500px;
+  min-width: 600px;
+}
+
+#showpicture {
+  // width: 50%;
+  // padding-left: 100px;
+  padding-top: 50px;
+  // display: inline-block;
+}
+
+#side-nav {
+  padding-top: 50px;
+}

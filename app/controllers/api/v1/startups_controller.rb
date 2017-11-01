@@ -5,7 +5,8 @@ class Api::V1::StartupsController < ApplicationController
   end
 
   def show
-    render json: Startup.find(params[:id]), serializer: StartupShowSerializer
+    startup = Startup.find(params[:id])
+    render json: { startup: startup, user: current_user}
   end
 
   def create
