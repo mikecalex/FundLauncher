@@ -19,7 +19,14 @@
         <ul class= "left">
           <li class="name"><%= link_to 'FundLauncher', root_path %></li>
         </ul>
+
         <ul class="right">
+          <ul>
+            <li><%= form_tag(search_startups_path, method: :get) do %></li>
+            <li><%= search_field_tag :search, params[:search], placeholder: "Search Projects", required: "required"%></li>
+            <li><%= submit_tag "Search", class: "radius button", :name => nil %></li>
+            <li><% end %></li>
+          </ul>
           <div class="login">
             <a href='#' data-reveal-id="firstModal" class="icon" style="float: right;">&#9776;</a>
             <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
