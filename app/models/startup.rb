@@ -10,4 +10,8 @@ class Startup < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
+  def self.search(search)
+    where("name ILIKE ? OR category ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
+
 end
