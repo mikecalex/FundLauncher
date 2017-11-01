@@ -37,7 +37,7 @@ class StartupShowContainer extends Component {
   }
 
   getStartup() {
-    let startupId = this.props.match.params.id
+    let startupId = this.props.params.id
     fetch(`/api/v1/startups/${startupId}`, {
       headers: { 'Content-Type': 'application/json' },
       credentials: 'same-origin'

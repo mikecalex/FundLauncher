@@ -1,5 +1,6 @@
 import React from 'react';
 import { browserHistory, Link } from 'react-router';
+import BackButton from './BackButton.js';
 
 const StartupShow = (props) => {
   return(
@@ -8,7 +9,7 @@ const StartupShow = (props) => {
         <p><img className="show" width="460px" height="320px" src={props.photo}/></p>
       </div>
 
-      <div className="small-12 medium-4 large-4 columns" id="side-nav">        
+      <div className="small-12 medium-4 large-4 columns" id="side-nav">
         <ul className="side-nav">
           <h2>{props.name}</h2>
           <p>Category: {props.category}</p>
@@ -25,9 +26,12 @@ const StartupShow = (props) => {
         <p>{props.description}</p>
       </div>
 
-    <div className="button">
-      Back
-    </div>
+      <div>
+        <BackButton />
+        <Link to='/'> HOME </Link>
+        <h1 className="page-title">Startups</h1>
+        { props.children }
+      </div>
     </div>
   )
 }
