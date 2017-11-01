@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root                            to: 'startups#index'
-  get 'auth/:provider/callback',  to: 'sessions#create'
-  get 'logout',                   to: 'sessions#destroy'
+  resources :startups, except: [:show] do
+    collection do
+      get :search
+    end
+  end
 
   namespace :api do
     namespace :v1 do
@@ -11,4 +13,9 @@ Rails.application.routes.draw do
       resources :users
     end
   end
+
+  root                            to: 'startups#index'
+  get '*path',                    to: 'startups#index'
+  get 'auth/:provider/callback',  to: 'sessions#create'
+  get 'logout',                   to: 'sessions#destroy'
 end
