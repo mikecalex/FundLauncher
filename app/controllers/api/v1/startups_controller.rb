@@ -1,4 +1,5 @@
 class Api::V1::StartupsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     render json: Startup.all
@@ -19,8 +20,8 @@ class Api::V1::StartupsController < ApplicationController
       shares_available: params[:shares_available],
       user_id: params[:user_id],
       photo_url: params[:photo_url],
-      start_date: params[:start_date],
-      end_date: params[:end_date],
+      start_date_date: params[:start_date_date],
+      end_date_date: params[:end_date_date],
       user_id: current_user.id
     )
 

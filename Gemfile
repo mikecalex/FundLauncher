@@ -10,6 +10,7 @@ gem 'webpacker'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'foundation-rails'
+gem 'better_date_picker'
 
 group :development do
   gem 'listen', '~> 3.0.5'

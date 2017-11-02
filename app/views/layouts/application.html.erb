@@ -46,13 +46,15 @@
             </div>
           </div>
         </ul>
+
         <% if flash.any? %>
-      <div class="flash">
-        <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: "callout #{name}" %>
+        
+        <div class="flash">
+          <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, class: "callout #{name}" %>
+          <% end %>
+        </div>
         <% end %>
-      </div>
-      <% end %>
 
     </div>
 

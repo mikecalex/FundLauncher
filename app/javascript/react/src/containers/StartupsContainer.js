@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StartupsIndex from '../components/StartupsIndex'
+import StartupFormContainer from './StartupFormContainer'
 
 class StartupsContainer extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class StartupsContainer extends Component {
     }
     this.getStartups = this.getStartups.bind(this)
     this.getUser = this.getUser.bind(this)
+    this.addNewStartup = this.addNewStartup.bind(this)
   }
 
   componentDidMount() {
@@ -39,7 +41,25 @@ class StartupsContainer extends Component {
       });
   }
 
+  addNewStartup(formPayload) {
+    fetch('api/v1/startups', {
+      method: 'POST',
+      body: JSON.stringify(formPayload),
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin'
+    })
+      .then(response => {return response.json()
+      })
+      .then(json => {
+        let newStartupsArray = this.state.startups.concat(json.startup)
+        this.setState({ startups: newStartupsArray })
+      })
+  }
+
   render() {
+    let handleSubmit = (formPayload) => {
+      this.addNewStartup(formPayload)
+    }
     return(
       <div>
         <div className="row column text-center">
@@ -48,6 +68,14 @@ class StartupsContainer extends Component {
         <StartupsIndex
           startups={this.state.startups}
         />
+        <div className="row small-up-2 large-up-2">
+          <div className="column">
+            <StartupFormContainer
+              user={this.state.user}
+              handleSubmit={handleSubmit}
+            />
+          </div>
+        </div>
       </div>
     )
   }
