@@ -41,6 +41,10 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+    better_date_picker (0.0.5)
+      activemodel
+      activesupport
+      chronic
     builder (3.2.3)
     capybara (2.15.4)
       addressable
@@ -49,6 +53,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chronic (0.10.2)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     coveralls (0.7.1)
@@ -259,6 +264,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_date_picker
   capybara
   coveralls
   factory_bot_rails

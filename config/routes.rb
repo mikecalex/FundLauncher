@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
-  root                            to: 'startups#index'
-  get '*path',                    to: 'startups#index'
+  root                            to: 'startups#index'  
   get 'auth/:provider/callback',  to: 'sessions#create'
   get 'logout',                   to: 'sessions#destroy'
+  get '*path',                    to: 'startups#index'
 end
