@@ -307,7 +307,7 @@ class StartupFormContainer extends Component {
           name='startupEndDate'
           handleChange={this.handleChange}
         />
-        <input type='submit' value='Submit'/>
+        <input className="form-button" type='submit' value='Submit'/>
       </form>
     )
   }

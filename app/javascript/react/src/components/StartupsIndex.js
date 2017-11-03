@@ -15,9 +15,9 @@ const StartupsIndex = props => {
   })
 
   return(
-    <ul key={"startup-listing"}>
+    <div className="row" key={"startup-listing"}>
       {startups}
-    </ul>
+    </div>
   )
 }
 
