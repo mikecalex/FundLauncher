@@ -15,7 +15,7 @@ const StartupsIndex = props => {
   })
 
   return(
-    <div className="row" key={"startup-listing"}>
+    <div className="column-tiles" key={"startup-listing"}>
       {startups}
     </div>
   )

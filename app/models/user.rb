@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :start_ups
+  has_many :investments
+  has_many :start_ups, through: :investments
 
   validates :first_name, presence: true
   validates :last_name, presence: true
