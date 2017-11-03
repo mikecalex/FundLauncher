@@ -4,7 +4,7 @@ import BackButton from './BackButton.js';
 
 const StartupShow = (props) => {
   return(
-    <div className="row">
+    <div className="show-row">
       <div className="small-12 medium-8 large-8 columns" id="showpicture">
         <p><img className="show" width="460px" height="320px" src={props.photo}/></p>
       </div>
@@ -29,7 +29,7 @@ const StartupShow = (props) => {
       <div>
         <BackButton />
         <Link to='/'> HOME </Link>
-        <h1 className="page-title">Startups</h1>
+        <h1 className="page-title"></h1>
         { props.children }
       </div>
     </div>

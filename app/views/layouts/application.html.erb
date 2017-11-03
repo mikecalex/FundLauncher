@@ -14,20 +14,27 @@
   </head>
 
   <body>
-    <div class="top-bar" data-topbar role="navigation">
-      <section class="top-bar-section">
-        <ul class= "left">
-          <li class="name"><%= link_to 'FundLauncher', root_path %></li>
-        </ul>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to 'FundLauncher', root_path %></h1>
+        </li>
+      </ul>
 
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><a href="#">Start a Project</a></li>
+        </ul>
+        <!-- Right Nav Section -->
         <ul class="right">
-          <ul>
-            <li><%= form_tag(search_startups_path, method: :get) do %></li>
-            <li><%= search_field_tag :search, params[:search], placeholder: "Search Projects", required: "required"%></li>
-            <li><%= submit_tag "Search", class: "radius button", :name => nil %></li>
-            <li><% end %></li>
-          </ul>
-          <div class="login">
+          <li class="search">
+            <%= form_tag(search_startups_path, method: :get) do %>
+            <%= submit_tag "Search", class: "radius button", :name => nil %>
+            <%= search_field_tag :search, params[:search], placeholder: "Search Projects", required: "required"%>
+            <% end %>
+          </li>
+          <li class="login">
             <a href='#' data-reveal-id="firstModal" class="icon" style="float: right;">&#9776;</a>
             <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
               <h2 id="firstModalTitle">Welcome to FundLauncher!</h2>
@@ -44,11 +51,11 @@
               <% end %>
               <a class="close-reveal-modal" aria-label="Close">&#215;</a>
             </div>
-          </div>
+          </li>
         </ul>
-
+      </section>
         <% if flash.any? %>
-        
+
         <div class="flash">
           <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, class: "callout #{name}" %>
@@ -56,7 +63,7 @@
         </div>
         <% end %>
 
-    </div>
+    </nav>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

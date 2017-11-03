@@ -61,15 +61,16 @@ class StartupsContainer extends Component {
       this.addNewStartup(formPayload)
     }
     return(
-      <div>
-        <div className="row column text-center">
-          <h3>Startups</h3>
+      <div className="main-app">
+        <div className="row text-center">
+          <h3><strong>Featured Startups</strong></h3>
         </div>
         <StartupsIndex
           startups={this.state.startups}
         />
-        <div className="row small-up-2 large-up-2">
+        <div className="small-up-2 large-up-2">
           <div className="column">
+            <h3><strong>Add a New Project</strong></h3>
             <StartupFormContainer
               user={this.state.user}
               handleSubmit={handleSubmit}
