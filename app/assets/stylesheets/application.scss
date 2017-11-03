@@ -28,6 +28,7 @@ ul.right {
   display: inline;
   max-height: 45px;
   min-height: 45px;
+  padding-right: 20px
 }
 
 .top-bar-section input.radius.button, input#search {
@@ -60,8 +61,8 @@ ul.right {
 }
 
 img.thumbnail {
-  height: 175px;
-  width: 250px;
+  height: 250px;
+  width: 400px;
   border-radius: 0%;
 }
 
@@ -73,15 +74,17 @@ img.show {
 
 
 .large-3 {
-    min-width: 250px;
+    min-width: 400px;
+    max-width: 400px;
     background-color: white;
-    min-height: 350px;
+    min-height: 450px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px;
     display: inline-block;
-    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px
 }
 
 div.main-app {
@@ -120,14 +123,16 @@ input.form-button:hover {
 }
 //end of form styling
 
-div.row {
-  padding-bottom: 20px;
+div.column-tiles {
+  padding: 50px;
+
   display: flex;
   justify-content: space-between;
   text-align: center;
+  flex-flow: row wrap;
 }
 
-div.row.text-center {
+div.column-tiles.text-center {
   padding-bottom: 20px;
 }
 
@@ -135,6 +140,7 @@ div.column {
   padding-top: 30px;
   display: inline-block;
   text-align: center;
+  background-color: #FCFCFC;
 }
 
 #showpicture {
