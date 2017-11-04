@@ -62,6 +62,9 @@ class StartupsContainer extends Component {
     }
     return(
       <div className="main-app">
+        <div className="hero">
+          <img className="hero-image" src="https://i0.wp.com/picjumbo.com/wp-content/uploads/DSC04986.jpg?zoom=2&w=2210&quality=50"/>
+        </div>
         <div className="row text-center">
           <h3><strong>Featured Startups</strong></h3>
         </div>

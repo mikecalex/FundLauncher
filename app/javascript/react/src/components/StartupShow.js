@@ -18,6 +18,13 @@ const StartupShow = (props) => {
           <p>Total Shares Available: {props.total}</p>
           <p>Campaign Start Date: {props.start} </p>
           <p>Campaign End Date: {props.end} </p>
+
+          <button className="invest-button" type="button" to='#'> Invest </button>
+
+          <div>
+            <BackButton />
+            { props.children }
+          </div>
         </ul>
       </div>
 
@@ -26,12 +33,6 @@ const StartupShow = (props) => {
         <p>{props.description}</p>
       </div>
 
-      <div>
-        <BackButton />
-        <Link to='/'> HOME </Link>
-        <h1 className="page-title"></h1>
-        { props.children }
-      </div>
     </div>
   )
 }
