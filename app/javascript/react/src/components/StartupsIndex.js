@@ -9,6 +9,8 @@ const StartupsIndex = props => {
         id={startup.id}
         name={startup.name}
         photo={startup.photo_url}
+        end_date={startup.end_date}
+        start_date={startup.start_date}
         description={startup.description}
       />
     )

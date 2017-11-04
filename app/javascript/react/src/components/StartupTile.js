@@ -10,6 +10,7 @@ const StartupTile = props => {
         <br/>
         <h5><strong>{props.name}</strong></h5>
         <h6>{props.description}</h6>
+        <h6 className="date">Funding Close: {props.end_date}</h6>
       </Link>
     </div>
   )
