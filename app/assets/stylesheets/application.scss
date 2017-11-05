@@ -20,6 +20,15 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
+body h4 {
+ padding-top: 70px;
+ padding-left: 30px
+}
+
+div.back {
+  padding-left: 30px
+}
+
 nav.top-bar {
   position: fixed;
   top: 0;
@@ -143,16 +152,15 @@ div.main-app {
 }
 // form styling
 form.callout {
-  width: 55%;
+  width: 75%;
   display: inline-block;
   text-align: center;
+  margin-bottom: 10px;
+
 }
 
 div.form-field {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-div.form-field-placeholder {
 }
 
 input.form-button {
@@ -253,4 +261,19 @@ button.back-button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.modal {
+    // position: fixed;
+    top: 50px;
+    right: 100px;
+    bottom: 50px;
+    left: 100px;
+    z-index: 3;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    display: block;
+    text-align: center;
+    min-width: 700px
 }

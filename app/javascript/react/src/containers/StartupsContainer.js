@@ -1,17 +1,26 @@
 import React, { Component } from 'react'
 import StartupsIndex from '../components/StartupsIndex'
 import StartupFormContainer from './StartupFormContainer'
+import Modal from '../components/Modal'
+
 
 class StartupsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       startups: [],
-      user: {}
+      user: {},
+      isOpen: false
     }
     this.getStartups = this.getStartups.bind(this)
     this.getUser = this.getUser.bind(this)
     this.addNewStartup = this.addNewStartup.bind(this)
+  }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
   componentDidMount() {
@@ -74,14 +83,19 @@ class StartupsContainer extends Component {
         <StartupsIndex
           startups={this.state.startups}
         />
-        <div className="small-up-2 large-up-2">
-          <div className="column">
-            <h3><strong>Add a New Project</strong></h3>
+
+        <div className="modal">
+          <button onClick={this.toggleModal}>
+            Start a New Project
+          </button>
+
+          <Modal show={this.state.isOpen}
+            onClose={this.toggleModal}>
             <StartupFormContainer
               user={this.state.user}
               handleSubmit={handleSubmit}
             />
-          </div>
+          </Modal>
         </div>
       </div>
     )
