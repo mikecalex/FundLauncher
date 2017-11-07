@@ -38,6 +38,18 @@
             <%= search_field_tag :search, params[:search], placeholder: "Search Projects", required: "required"%>
             <% end %>
           </li>
+
+          <li><%- if current_user -%></li>
+          <ul class="nav_pic">
+            <li><% unless current_user.image.nil? %></li>
+            <div id="profile-photo-container">
+              <li class="nav-profile" id="profile-photo"><%= image_tag current_user.image, { size: "50x80" } %></li>
+            </div>
+            <li><% end %></li>
+          </ul>
+          <li><% end %></li>
+
+
           <li class="login">
             <a href='#' data-reveal-id="firstModal" class="icon" style="float: right;">&#9776;</a>
             <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
