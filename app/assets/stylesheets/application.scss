@@ -34,12 +34,15 @@ nav.top-bar {
   top: 0;
   width: 100%;
   z-index: 1;
+  min-height: 60px;
+  max-height: 60px;
 }
 
 ul.right {
-  min-width: 500px;
+  min-width: 625px;
   display: inline;
   float: right;
+  padding-top: 5px
 }
 
 .top-bar-section li.search {
@@ -75,8 +78,24 @@ ul.right {
     text-decoration: none;
     line-height: inherit;
     font-size: 30px;
-    max-height: 45px;
+    max-height: 60px;
     float: right;
+}
+
+.top-bar .name h1 a {
+    width: auto;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.top-bar-section ul li > a {
+    display: block;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: none;
+    margin-top: 6px;
 }
 
 img.thumbnail {
@@ -309,3 +328,12 @@ body h4 {
     border-top-style: solid;
     margin-top: 10px;
 }
+
+#profile-photo-container img {
+   max-width: 60px;
+   max-height: 90px;
+   object-position: center;
+   object-fit: cover;
+   border-radius: 30%;
+   border:1px solid white;
+ }

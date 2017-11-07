@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import StartupsIndex from '../components/StartupsIndex'
+import StartupsIndex from './StartupsIndex'
 import StartupFormContainer from './StartupFormContainer'
 import Modal from '../components/Modal'
 
