@@ -1,40 +1,114 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { browserHistory, Link } from 'react-router';
 import BackButton from './BackButton.js';
+import RequireScript from 'scriptjs'
 
-const StartupShow = (props) => {
+class StartupShow extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      numShares: '',
+      investments: []
+    }
+    this.showPayDialog = this.showPayDialog.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.calculateAmount = this.calculateAmount.bind(this)
+  }
+
+  calculateAmount() {
+    let a = parseInt(this.state.numShares)
+    let b = parseInt(this.props.sharePriceCalc)
+    let totalCost = a * b
+    let finalCost = totalCost * 100
+    return finalCost
+  }
+
+  handleChange(event) {
+    let value = event.target.value
+    let name = event.target.name
+    this.setState({ [name]: value })
+  }
+
+  showPayDialog(e) {
+    if(this.handler){
+      this.handler.open({
+        name: this.props.name,
+        amount: this.calculateAmount(),
+        description: 'Shares'
+      })
+    }
+  }
+
+  componentDidMount() {
+    let that = this
+    RequireScript.get('https://checkout.stripe.com/checkout.js', () => {
+      that.handler = StripeCheckout.configure({
+        key: 'pk_test_QsMG8damJeqqksFgx4bcrasV',
+        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        locale: 'auto',
+        bitcoin: true,
+        token: function(token) {
+          fetch("http://localhost:3000/api/v1/investments", {
+            method: 'POST',
+            body: JSON.stringify(token),
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'same-origin'
+          })
+          .then(response => {return response.json()
+          })
+          .then(json => {
+            let newInvestmentsArray = this.state.investments.concat(json.investment)
+            this.setState({ investments: newInvestmentsArray })
+          })
+        }
+      })
+    });
+  }
+
+  render() {
   return(
     <div className="show-row">
       <div className="small-12 medium-8 large-8 columns" id="showpicture">
-        <p><img className="show" width="460px" height="320px" src={props.photo}/></p>
+        <p><img className="show" width="460px" height="320px" src={this.props.photo}/></p>
       </div>
 
       <div className="small-12 medium-4 large-4 columns" id="side-nav">
         <ul className="side-nav">
-          <h2>{props.name}</h2>
-          <p>Category: {props.category}</p>
-          <p>Desired Funding: {props.desired}</p>
-          <p>Current Investments: {props.current}</p>
-          <p>Total Shares Available: {props.total}</p>
-          <p>Campaign Start Date: {props.start} </p>
-          <p>Campaign End Date: {props.end} </p>
+          <h2>{this.props.name}</h2>
+          <p>Category: {this.props.category}</p>
+          <p>Campaign Start Date: {this.props.start} </p>
+          <p>Campaign End Date: {this.props.end} </p>
+          <p>Desired Funding: {this.props.desired}</p>
+          <p>Current Investments: {this.props.current}</p>
+          <p>Total Shares Available: {this.props.total}</p>
+          <p>Share Price: {this.props.sharePrice} </p>
 
-          <button className="invest-button" type="button" to='#'> Invest </button>
+          <input
+            className="show-input"
+            placeholder="Number of Shares"
+            type='number'
+            value={this.state.numShares}
+            name="numShares"
+            onChange={this.handleChange}
+          />
+
+          <button className="invest-button" type="button" onClick={this.showPayDialog}> Invest </button>
 
           <div>
             <BackButton />
-            { props.children }
+            { this.props.children }
           </div>
         </ul>
       </div>
 
       <div className="small-12 medium-12 large-12 columns">
         <h4>Description:</h4>
-        <p>{props.description}</p>
+        <p>{this.props.description}</p>
       </div>
 
     </div>
   )
+}
 }
 
 export default StartupShow;

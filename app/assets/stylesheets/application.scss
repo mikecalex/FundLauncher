@@ -277,3 +277,35 @@ button.back-button:active {
     text-align: center;
     min-width: 700px
 }
+
+input.show-input {
+  max-width: 150px
+}
+
+#showpicture {
+    padding-top: 100px;
+    padding-left: 200px;
+}
+
+.side-nav {
+    display: block;
+    margin: 0;
+    padding: 0.875rem 0;
+    list-style-type: none;
+    list-style-position: outside;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    border-left-color: grey;
+    border-left: 1px;
+    border-left-style: solid;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+body h4 {
+    padding-top: 30px;
+    padding-left: 30px;
+    border-top-color: grey;
+    border-top: 1px;
+    border-top-style: solid;
+    margin-top: 10px;
+}

@@ -52,6 +52,9 @@ class StartupShowContainer extends Component {
     let current_funding = this.formatMoney(this.state.startup.current_funding)
     let desired_funding = this.formatMoney(this.state.startup.desired_funding)
     let shares_available = this.formatInteger(this.state.startup.shares_available)
+    let dollars = '$'
+    let sharePrice = dollars += this.state.startup.desired_funding / this.state.startup.shares_available
+    let sharePriceCalc = this.state.startup.desired_funding / this.state.startup.shares_available
     return(
       <StartupShow
         id={this.state.startup.id}
@@ -64,6 +67,8 @@ class StartupShowContainer extends Component {
         start={this.state.startup.start_date}
         end={this.state.startup.end_date}
         photo={this.state.startup.photo_url}
+        sharePrice={sharePrice}
+        sharePriceCalc={sharePriceCalc}
       />
     )
   }
