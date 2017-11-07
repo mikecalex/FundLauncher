@@ -86,7 +86,7 @@ class StartupsContainer extends Component {
 
         <div className="modal">
           <button onClick={this.toggleModal}>
-            Start a New Project
+            Start a New Funding Round
           </button>
 
           <Modal show={this.state.isOpen}

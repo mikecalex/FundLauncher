@@ -9,12 +9,13 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :startups, only: [:index, :show, :create]
       resources :users
+      resources :startups, only: [:index, :show, :create]
+      resources :investments, only: [:index, :show, :create]
     end
   end
 
-  root                            to: 'startups#index'  
+  root                            to: 'startups#index'
   get 'auth/:provider/callback',  to: 'sessions#create'
   get 'logout',                   to: 'sessions#destroy'
   get '*path',                    to: 'startups#index'
