@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StartupTextInputField from '../components/StartupTextInputField'
+import Category from './Category'
 
 class StartupFormContainer extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class StartupFormContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
 
     this.handleNameChange = this.handleNameChange.bind(this)
-    this.handleCategoryChange = this.handleCategoryChange.bind(this)
+    // this.handleCategoryChange = this.handleCategoryChange.bind(this)
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
     this.handleDesiredFundingChange = this.handleDesiredFundingChange.bind(this)
     this.handleCurrentFundingChange = this.handleCurrentFundingChange.bind(this)
@@ -31,7 +32,7 @@ class StartupFormContainer extends Component {
     this.handleEndDate = this.handleEndDate.bind(this)
 
     this.validateNameChange = this.validateNameChange.bind(this)
-    this.validateCategoryChange = this.validateCategoryChange.bind(this)
+    // this.validateCategoryChange = this.validateCategoryChange.bind(this)
     this.validateDescriptionChange = this.validateDescriptionChange.bind(this)
     this.validateDesiredFundingChange = this.validateDesiredFundingChange.bind(this)
     this.validateCurrentFundingChange = this.validateCurrentFundingChange.bind(this)
@@ -65,7 +66,7 @@ class StartupFormContainer extends Component {
     event.preventDefault()
     if (
       this.validateNameChange(this.state.startupName) &&
-      this.validateCategoryChange(this.state.startupCategory) &&
+      // this.validateCategoryChange(this.state.startupCategory) &&
       this.validateDescriptionChange(this.state.startupDescription) &&
       this.validateDesiredFundingChange(this.state.startupDesiredFunding) &&
       this.validateCurrentFundingChange(this.state.startupCurrentFunding) &&
@@ -96,10 +97,10 @@ class StartupFormContainer extends Component {
     this.validateNameChange(event.target.value)
     this.setState({ startupName: event.target.value })
   }
-  handleCategoryChange(event) {
-    this.validateCategoryChange(event.target.value)
-    this.setState({ startupCategory: event.target.value })
-  }
+  // handleCategoryChange(event) {
+  //   this.validateCategoryChange(event.target.value)
+  //   this.setState({ startupCategory: event.target.value })
+  // }
   handleDescriptionChange(event) {
     this.validateDescriptionChange(event.target.value)
     this.setState({ startupDescription: event.target.value })
@@ -142,18 +143,18 @@ class StartupFormContainer extends Component {
     }
   }
 
-  validateCategoryChange(category) {
-    if (category === '') {
-      let newError = { startupCategory: 'You must select a category.' }
-      this.setState({ errors: Object.assign(this.state.errors, newError) })
-      return false
-    } else {
-      let errorState = this.state.errors
-      delete errorState.startupCategory
-      this.setState({ errors: errorState })
-      return true
-    }
-  }
+  // validateCategoryChange(category) {
+  //   if (category === '') {
+  //     let newError = { startupCategory: 'You must select a category.' }
+  //     this.setState({ errors: Object.assign(this.state.errors, newError) })
+  //     return false
+  //   } else {
+  //     let errorState = this.state.errors
+  //     delete errorState.startupCategory
+  //     this.setState({ errors: errorState })
+  //     return true
+  //   }
+  // }
 
   validateDescriptionChange(description) {
     if (description === '') {
@@ -259,7 +260,7 @@ class StartupFormContainer extends Component {
           name='startupName'
           handleChange={this.handleChange}
         />
-        <StartupTextInputField
+        <Category
           label='Category'
           value={this.state.startupCategory}
           name='startupCategory'

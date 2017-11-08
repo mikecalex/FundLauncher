@@ -17,7 +17,7 @@ const StartupsIndex = props => {
   })
 
   return(
-    <div>
+    <div id="tile-container">
       {startups}
     </div>
   )

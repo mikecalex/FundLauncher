@@ -73,21 +73,24 @@ div.hero-text h6 {
   font-size: 2rem;
 }
 
-div.container {
-  border-bottom: 1px solid #DAE1E9;
-  background-color: #FCFCFC;
-}
-
 div.row.text-center {
   padding-top: 10px;
   padding-bottom: 15px;
 }
 
+//tiles on index
+#tile-container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
 .large-3 {
   min-width: 350px;
-  max-width: 350px;
+  max-width: 500px;
   background-color: #FCFCFC;
-  min-height: 450px;
+  min-height: 600px;
+  max-height: 800px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   padding: 0px;
@@ -96,6 +99,7 @@ div.row.text-center {
   margin-left: 40px;
   margin-right: 40px
 }
+//end tiles on index
 
 .large-3 h6.date {
   text-align: right;
@@ -135,6 +139,8 @@ div#tiles {
   min-width: 75%;
   padding-right: 20px;
   background-color: #FCFCFC;
+  display: flex;
+  justify-content: space-between;
 }
 
 div#side-category {
@@ -143,7 +149,7 @@ div#side-category {
   border-left-color: grey;
   border-left: 1px;
   border-left-style: solid;
-  min-height: 400px;
+  min-height: -webkit-fill-available;
 }
 
 .side-nav {
