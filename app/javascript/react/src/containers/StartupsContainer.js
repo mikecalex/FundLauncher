@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import StartupsIndex from './StartupsIndex'
+import StartupsIndex from '../components/StartupsIndex'
 import StartupFormContainer from './StartupFormContainer'
 import Modal from '../components/Modal'
+import Ticker from './Ticker'
 
 
 class StartupsContainer extends Component {
@@ -77,25 +78,33 @@ class StartupsContainer extends Component {
             <h6>Joining Businesses and Investors</h6>
           </div>
         </div>
+
+        <Ticker />
+
         <div className="row text-center">
           <h3><strong>Featured Startups</strong></h3>
         </div>
-        <StartupsIndex
-          startups={this.state.startups}
-        />
+        <div className="small-12 medium-8 large-8 columns" id="tiles">
+          <StartupsIndex
+            startups={this.state.startups}
+          />
+        </div>
+        <div className="small-12 medium-4 large-4 columns" id="side-category">
+          <div className="modal">
+            <button className="new-form" onClick={this.toggleModal}>
+              Start a New Funding Round
+            </button>
 
-        <div className="modal">
-          <button onClick={this.toggleModal}>
-            Start a New Funding Round
-          </button>
+            <Modal show={this.state.isOpen}
+              onClose={this.toggleModal}>
+              <StartupFormContainer
+                user={this.state.user}
+                handleSubmit={handleSubmit}
+              />
+            </Modal>
 
-          <Modal show={this.state.isOpen}
-            onClose={this.toggleModal}>
-            <StartupFormContainer
-              user={this.state.user}
-              handleSubmit={handleSubmit}
-            />
-          </Modal>
+            <h5>Categories</h5>
+          </div>
         </div>
       </div>
     )

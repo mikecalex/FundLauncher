@@ -1,0 +1,68 @@
+nav.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  min-height: 60px;
+  max-height: 60px;
+}
+
+ul.right {
+  min-width: 625px;
+  display: inline;
+  float: right;
+  padding-top: 5px
+}
+
+.top-bar-section li.search {
+  min-width: 500px;
+  display: inline;
+  max-height: 45px;
+  min-height: 45px;
+  padding-right: 20px;
+}
+
+.top-bar-section input.radius.button, input#search {
+  max-width: 200px;
+  display: inline-flex;
+  float: right;
+}
+
+.top-bar-section form {
+  min-width: 500px;
+  display: inline;
+}
+
+.top-bar-section li.login {
+  float: right;
+}
+
+.top-bar-section ul li {
+    float: left;
+    display: inline-block;
+}
+
+.top-bar-section a.icon {
+    color: white;
+    text-decoration: none;
+    line-height: inherit;
+    font-size: 30px;
+    max-height: 60px;
+    float: right;
+}
+
+.top-bar .name h1 a {
+    width: auto;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.top-bar-section ul li > a {
+    display: block;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: none;
+    margin-top: 6px;
+}

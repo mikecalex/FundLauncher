@@ -26,7 +26,7 @@ class Modal extends Component {
      backgroundColor: '#fff',
      borderRadius: 5,
      maxWidth: 500,
-     minHeight: 300,
+     minHeight: 800,
      margin: '0 auto',
      padding: 30,
 
@@ -34,7 +34,7 @@ class Modal extends Component {
 
    return (
      <div className="backdrop" style={backdropStyle}>
-       <div className="modal" style={modalStyle}>
+       <div className="modal-window" style={modalStyle}>
          {this.props.children}
 
          <div className="footer">
