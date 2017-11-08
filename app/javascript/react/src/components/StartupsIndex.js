@@ -1,5 +1,5 @@
 import React from 'react';
-import StartupTile from '../components/StartupTile'
+import StartupTile from './StartupTile'
 
 const StartupsIndex = props => {
   let startups = props.startups.map(startup => {
@@ -17,7 +17,7 @@ const StartupsIndex = props => {
   })
 
   return(
-    <div className="column-tiles" >
+    <div>
       {startups}
     </div>
   )

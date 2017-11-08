@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import StartupsContainer from './containers/StartupsContainer';
 import StartupShowContainer from './containers/StartupShowContainer';
+import registerServiceWorker from './components/registerServiceWorker';
 
 const App = props => {
 
