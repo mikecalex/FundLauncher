@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 const StartupTile = props => {
 
@@ -9,8 +9,8 @@ const StartupTile = props => {
         <img className="thumbnail" size="20x20" src={props.photo} />
         <br/>
         <h5><strong>{props.name}</strong></h5>
-        <h6>{props.description}</h6>
-        <h6 className="date">Funding Close: {props.end_date}</h6>
+        <p className="desc">{props.description}</p>
+        <h6 className="date">{props.daysToGo}</h6>
       </Link>
     </div>
   )

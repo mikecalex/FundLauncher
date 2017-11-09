@@ -42,7 +42,7 @@ button.invest-button:active {
   transform: translateY(4px);
 }
 
-button.back-button {
+a.back-button {
   background-color: #008CBA;
   max-height: 50px;
   min-width: 280px;
@@ -58,16 +58,29 @@ button.back-button {
   box-shadow: 0 9px #999;
 }
 
-button.back-button:hover {
+a.back-button:hover {
   background-color: #336EFF;
 }
 
-button.back-button:active {
+a.back-button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-// button.new-form {
-//   position: relative;
-// }
+a.search-back-button {
+  padding-left: 30px;
+  background-color: #008CBA;
+  max-height: 50px;
+  min-width: 280px;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  box-shadow: 0 9px #999;
+}

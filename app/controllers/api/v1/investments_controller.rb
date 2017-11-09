@@ -14,6 +14,7 @@ class Api::V1::InvestmentsController < ApplicationController
   end
 
   def create
+
     # customer = nil
     # if user.stripe_customer_id.nil?
       # create the customer
@@ -40,6 +41,7 @@ class Api::V1::InvestmentsController < ApplicationController
       amount: params[:amount],
       type: params[:type]
     )
+      binding.pry
 
     if investment.save
       render json: { investment: investment }

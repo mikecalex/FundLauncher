@@ -4,7 +4,6 @@ import StartupFormContainer from './StartupFormContainer'
 import Modal from '../components/Modal'
 import Ticker from './Ticker'
 
-
 class StartupsContainer extends Component {
   constructor(props) {
     super(props);
@@ -67,6 +66,7 @@ class StartupsContainer extends Component {
   }
 
   render() {
+
     let handleSubmit = (formPayload) => {
       this.addNewStartup(formPayload)
     }
@@ -100,6 +100,7 @@ class StartupsContainer extends Component {
               <StartupFormContainer
                 user={this.state.user}
                 handleSubmit={handleSubmit}
+                currentUser={this.props.currentUser}
               />
             </Modal>
 

@@ -1,15 +1,16 @@
 
-
-<% if @startups.blank? %>
-  <h4>There are no projects containing the term <%= params[:search] %>.</h4>
-<% else %>
-  <% @startups.each do |startup| %>
-    <h3><%= startup.name %></h3>
-    <img width="200px" height="200px" src=<%=startup.photo_url %> />
-    <ul></br>
-      Description: <%= startup.description %></br>
-    </ul>
+<div class="search">
+  <% if @startups.blank? %>
+    <h4>There are no projects containing the term <%= params[:search] %>.</h4>
+  <% else %>
+    <% @startups.each do |startup| %>
+      <h3><%= startup.name %></h3>
+      <img width="200px" height="200px" src=<%=startup.photo_url %> />
+      <ul></br>
+        Description: <%= startup.description %></br>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
 
-</br><div class="back"><%= link_to 'Back', startups_path %></div>
+</br><div class="back"><%= link_to 'Back', startups_path, :class => "search-back-button" %></div>
+</div>

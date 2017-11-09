@@ -1,25 +1,15 @@
 import React, { Component } from 'react'
-// import CategorySelect from '../components/CategorySelect'
-
 
 class Category extends Component {
   constructor(props) {
     super(props);
-    this.state = {startupCategory: ''};
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    debugger
-    this.setState({startupCategory: event.target.value});
-
-  }
 render() {
     return(
       <label>
-        <select value={this.state.value} onChange={this.props.handleChange}>
-
+        <select name={this.props.name} value={this.props.value} onChange={this.props.handleChange}>
+          <option value="">Category</option>
           <option value="Electronic">Electronic</option>
           <option value="Politics">Politics</option>
           <option value="Games">Games</option>

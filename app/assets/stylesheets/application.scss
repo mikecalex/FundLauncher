@@ -24,6 +24,8 @@
 @import 'image';
 @import 'button';
 @import 'form';
+@import 'search';
+@import 'show';
 
 
 body {
@@ -31,22 +33,9 @@ body {
   background-color: #FCFCFC;
 }
 
-body h4 {
-  padding-top: 70px;
-  padding-left: 30px;
-  border-top-color: grey;
-  border-top: 1px;
-  border-top-style: solid;
-  margin-top: 10px;
-}
-
 div.main-app {
   background-color: #FCFCFC;
   font-family: 'Work Sans', sans-serif;
-}
-
-div.back {
-  padding-left: 30px;
 }
 
 div.hero-text h1 {
@@ -103,17 +92,17 @@ div.row.text-center {
 
 .large-3 h6.date {
   text-align: right;
-  padding-right: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  min-width: -webkit-fill-available;
+  bottom: 0;
+  position: absolute;
 }
 
-// div.column-tiles {
-//   padding: 50px;
-//
-//   display: flex;
-//   justify-content: space-between;
-//   text-align: center;
-//   flex-flow: row wrap;
-// }
+p.desc {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 div.column-tiles.text-center {
   padding-bottom: 20px;
@@ -146,9 +135,7 @@ div#tiles {
 div#side-category {
   max-width: 450px;
   background-color: #FCFCFC;
-  border-left-color: grey;
-  border-left: 1px;
-  border-left-style: solid;
+  border-left: 1px solid #DAE1E9;
   min-height: -webkit-fill-available;
 }
 
@@ -159,9 +146,7 @@ div#side-category {
   list-style-type: none;
   list-style-position: outside;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  border-left-color: grey;
-  border-left: 1px;
-  border-left-style: solid;
+  border-left: 1px solid #DAE1E9;
   padding-left: 20px;
   margin-top: 20px;
 }
