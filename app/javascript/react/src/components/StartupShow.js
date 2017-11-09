@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { browserHistory, Link } from 'react-router';
-import BackButton from './BackButton.js';
-import RequireScript from 'scriptjs'
+import { Link } from 'react-router-dom';
+import RequireScript from 'scriptjs';
 
 class StartupShow extends Component {
   constructor(props){
@@ -66,49 +65,49 @@ class StartupShow extends Component {
   }
 
   render() {
-  return(
-    <div className="show-row">
-      <div className="small-12 medium-8 large-8 columns" id="showpicture">
-        <p><img className="show" width="460px" height="320px" src={this.props.photo}/></p>
+    return(
+      <div className="show-row">
+        <div className="small-12 medium-8 large-8 columns" id="showpicture">
+          <p><img className="show" width="460px" height="320px" src={this.props.photo}/></p>
+        </div>
+
+        <div className="small-12 medium-4 large-4 columns" id="side-nav">
+          <ul className="side-nav">
+            <h2>{this.props.name}</h2>
+            <p>Category: {this.props.category}</p>
+            <p>Campaign Start Date: {this.props.start} </p>
+            <p>Campaign End Date: {this.props.end} </p>
+            <p>Desired Funding: {this.props.desired}</p>
+            <p>Current Investments: {this.props.current}</p>
+            <p>Total Shares Available: {this.props.total}</p>
+            <p>Share Price: {this.props.sharePrice} </p>
+
+            <input
+              className="show-input"
+              placeholder="Number of Shares"
+              type='number'
+              value={this.state.numShares}
+              name="numShares"
+              onChange={this.handleChange}
+            />
+
+            <button className="invest-button" type="button" onClick={this.showPayDialog}> Invest </button>
+
+            <div>
+              <Link className="back-button" to='/'>Back</Link>
+              { this.props.children }
+            </div>
+          </ul>
+        </div>
+
+        <div className="small-12 medium-12 large-12 columns">
+          <h4>Description:</h4>
+          <p>{this.props.description}</p>
+        </div>
+
       </div>
-
-      <div className="small-12 medium-4 large-4 columns" id="side-nav">
-        <ul className="side-nav">
-          <h2>{this.props.name}</h2>
-          <p>Category: {this.props.category}</p>
-          <p>Campaign Start Date: {this.props.start} </p>
-          <p>Campaign End Date: {this.props.end} </p>
-          <p>Desired Funding: {this.props.desired}</p>
-          <p>Current Investments: {this.props.current}</p>
-          <p>Total Shares Available: {this.props.total}</p>
-          <p>Share Price: {this.props.sharePrice} </p>
-
-          <input
-            className="show-input"
-            placeholder="Number of Shares"
-            type='number'
-            value={this.state.numShares}
-            name="numShares"
-            onChange={this.handleChange}
-          />
-
-          <button className="invest-button" type="button" onClick={this.showPayDialog}> Invest </button>
-
-          <div>
-            <BackButton />
-            { this.props.children }
-          </div>
-        </ul>
-      </div>
-
-      <div className="small-12 medium-12 large-12 columns">
-        <h4>Description:</h4>
-        <p>{this.props.description}</p>
-      </div>
-
-    </div>
-  )
-}
+    )
+  }
 }
 
 export default StartupShow;

@@ -14,6 +14,7 @@ class Api::V1::InvestmentsController < ApplicationController
   end
 
   def create
+
     # customer = nil
     # if user.stripe_customer_id.nil?
       # create the customer
@@ -34,19 +35,19 @@ class Api::V1::InvestmentsController < ApplicationController
       :currency => 'usd'
     )
 
-    # investment = Investment.new(
-    #   user_id: user,
-    #   startup_id: startup_id,
-    #   payment_id: charge.id,
-    #   amount: params[:amount],
-    #   type: params[:type]
-    # )
-    #
-    # if investment.save
-    #   render json: { investment: investment }
-    # else
-    #   render json: { error: investment.errors.full_messages }, status: :unprocessable_entity
-    # end
+    investment = Investment.new(
+      :customer => customer.id,
+      payment_id: charge.id,
+      amount: params[:amount],
+      type: params[:type]
+    )
+      binding.pry
+
+    if investment.save
+      render json: { investment: investment }
+    else
+      render json: { error: investment.errors.full_messages }, status: :unprocessable_entity
+    end
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

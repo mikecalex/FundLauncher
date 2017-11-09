@@ -24,6 +24,8 @@
 @import 'image';
 @import 'button';
 @import 'form';
+@import 'search';
+@import 'show';
 
 
 body {
@@ -31,22 +33,9 @@ body {
   background-color: #FCFCFC;
 }
 
-body h4 {
-  padding-top: 70px;
-  padding-left: 30px;
-  border-top-color: grey;
-  border-top: 1px;
-  border-top-style: solid;
-  margin-top: 10px;
-}
-
 div.main-app {
   background-color: #FCFCFC;
   font-family: 'Work Sans', sans-serif;
-}
-
-div.back {
-  padding-left: 30px;
 }
 
 div.hero-text h1 {
@@ -73,21 +62,24 @@ div.hero-text h6 {
   font-size: 2rem;
 }
 
-div.container {
-  border-bottom: 1px solid #DAE1E9;
-  background-color: #FCFCFC;
-}
-
 div.row.text-center {
   padding-top: 10px;
   padding-bottom: 15px;
 }
 
+//tiles on index
+#tile-container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
 .large-3 {
   min-width: 350px;
-  max-width: 350px;
+  max-width: 500px;
   background-color: #FCFCFC;
-  min-height: 450px;
+  min-height: 600px;
+  max-height: 800px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   padding: 0px;
@@ -96,20 +88,21 @@ div.row.text-center {
   margin-left: 40px;
   margin-right: 40px
 }
+//end tiles on index
 
 .large-3 h6.date {
   text-align: right;
-  padding-right: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  min-width: -webkit-fill-available;
+  bottom: 0;
+  position: absolute;
 }
 
-// div.column-tiles {
-//   padding: 50px;
-//
-//   display: flex;
-//   justify-content: space-between;
-//   text-align: center;
-//   flex-flow: row wrap;
-// }
+p.desc {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 div.column-tiles.text-center {
   padding-bottom: 20px;
@@ -135,15 +128,15 @@ div#tiles {
   min-width: 75%;
   padding-right: 20px;
   background-color: #FCFCFC;
+  display: flex;
+  justify-content: space-between;
 }
 
 div#side-category {
   max-width: 450px;
   background-color: #FCFCFC;
-  border-left-color: grey;
-  border-left: 1px;
-  border-left-style: solid;
-  min-height: 400px;
+  border-left: 1px solid #DAE1E9;
+  min-height: -webkit-fill-available;
 }
 
 .side-nav {
@@ -153,9 +146,7 @@ div#side-category {
   list-style-type: none;
   list-style-position: outside;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  border-left-color: grey;
-  border-left: 1px;
-  border-left-style: solid;
+  border-left: 1px solid #DAE1E9;
   padding-left: 20px;
   margin-top: 20px;
 }

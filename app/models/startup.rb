@@ -20,4 +20,15 @@ class Startup < ApplicationRecord
     where("name ILIKE ? OR category ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
+  CATEGORIES = [
+    "Electronic",
+    "Politics",
+    "Games",
+    "Social",
+    "Entertainment",
+    "Finance",
+    "Music",
+    "Other"
+  ]
+
 end

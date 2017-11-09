@@ -1,6 +1,6 @@
 img.thumbnail {
   height: 250px;
-  min-width: 350px;
+  min-width: -webkit-fill-available;
   border-radius: 0%;
 }
 

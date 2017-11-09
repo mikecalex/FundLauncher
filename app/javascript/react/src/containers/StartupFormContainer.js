@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StartupTextInputField from '../components/StartupTextInputField'
+import Category from './Category'
 
 class StartupFormContainer extends Component {
   constructor(props) {
@@ -62,6 +63,7 @@ class StartupFormContainer extends Component {
   }
 
   handleSubmit(event) {
+    debugger
     event.preventDefault()
     if (
       this.validateNameChange(this.state.startupName) &&
@@ -259,7 +261,7 @@ class StartupFormContainer extends Component {
           name='startupName'
           handleChange={this.handleChange}
         />
-        <StartupTextInputField
+        <Category
           label='Category'
           value={this.state.startupCategory}
           name='startupCategory'
