@@ -10,7 +10,7 @@ const StartupsIndex = props => {
   let diffSec = Date.parse(endDate) - Date.parse(startDate) ;
   let date = (Math.ceil(diffSec / (1000*60*60*24)) + " days to go");
 
-  let percFund = startup.current_funding / startup.desired_funding
+  let percFundCalc = startup.current_funding / startup.desired_funding
 
     return(
       <StartupTile
@@ -22,7 +22,7 @@ const StartupsIndex = props => {
         start_date={startup.start_date}
         description={startup.description}
         daysToGo={date}
-        perc={percFund}
+        perc={percFundCalc}
       />
     )
   })
