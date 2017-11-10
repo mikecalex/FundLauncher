@@ -5,7 +5,9 @@ const UserShow = props => {
 
   return(
     <div className="user-page">
-      <h5><strong>{props.firstName} {props.lastName}</strong></h5>
+      <div>
+        <h2 className="user-name"><strong>{props.firstName} {props.lastName}</strong></h2>
+      </div>
       <h6 className="email">{props.email}</h6>
     </div>
   )

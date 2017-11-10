@@ -1,0 +1,16 @@
+h2#firstModalTitle {
+  text-align: center;
+}
+
+h3.name {
+  text-align: center;
+}
+
+a.log-out {
+  float: right
+}
+
+div#firstModal.reveal-modal.open {
+  max-width: 50rem;
+  width: 80%;
+}

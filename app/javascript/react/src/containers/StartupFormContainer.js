@@ -63,7 +63,6 @@ class StartupFormContainer extends Component {
   }
 
   handleSubmit(event) {
-    debugger
     event.preventDefault()
     if (
       this.validateNameChange(this.state.startupName) &&

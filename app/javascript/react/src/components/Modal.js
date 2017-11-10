@@ -12,7 +12,7 @@ class Modal extends Component {
 
    const backdropStyle = {
      position: 'fixed',
-     top: 0,
+     top: 55,
      bottom: 0,
      left: 0,
      right: 0,
@@ -24,15 +24,16 @@ class Modal extends Component {
      backgroundColor: '#fff',
      borderRadius: 5,
      maxWidth: 500,
-     minHeight: 800,
+     minHeight: 1000,
      margin: '0 auto',
-     padding: 30,
+     paddingTop: 60,
 
    };
 
    return (
      <div className="backdrop" style={backdropStyle}>
        <div className="modal-window" style={modalStyle}>
+         <h2 className="formTitle">Tell us about your company</h2>
          {this.props.children}
 
          <div className="footer">

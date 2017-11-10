@@ -36,7 +36,7 @@ class StartupShowContainer extends Component {
     }
   }
 
-  getStartup() {    
+  getStartup() {
     let startupId = this.props.match.params.id
     fetch(`/api/v1/startups/${startupId}`, {
       headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,8 @@ class StartupShowContainer extends Component {
     let sharePriceCalc = this.state.startup.desired_funding / this.state.startup.shares_available
     return(
       <StartupShow
-        id={this.state.startup.id}
+        startupId={this.state.startup.id}
+        userId={this.state.user.id}
         name={this.state.startup.name}
         description={this.state.startup.description}
         category={this.state.startup.category}

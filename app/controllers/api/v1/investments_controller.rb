@@ -14,20 +14,11 @@ class Api::V1::InvestmentsController < ApplicationController
   end
 
   def create
-
-    # customer = nil
-    # if user.stripe_customer_id.nil?
-      # create the customer
-    # else
-    #  customer = Customer.retrieve(user.stripe_customer_id)
-    # end
     customer = Stripe::Customer.create(
     :email => params[:email],
     :source  => params[:id]
     )
-    # modify your user object to store the stripe_customer_id
 
-    #persist the amount, currency, payment type, and the charge.id
     charge = Stripe::Charge.create(
       :customer => customer.id,
       :amount => params[:amount],
@@ -35,13 +26,18 @@ class Api::V1::InvestmentsController < ApplicationController
       :currency => 'usd'
     )
 
+      # binding.pry
+
     investment = Investment.new(
       :customer => customer.id,
       payment_id: charge.id,
       amount: params[:amount],
-      type: params[:type]
+      paymentType: params[:type],
+      user_id: params[:user_id],
+      startup_id: params[:startup_id],
+      currency: params[:currency]
     )
-      binding.pry
+
 
     if investment.save
       render json: { investment: investment }
