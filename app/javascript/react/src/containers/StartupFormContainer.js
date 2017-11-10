@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StartupTextInputField from '../components/StartupTextInputField'
+import StartupTextAreaField from '../components/StartupTextAreaField'
 import Category from './Category'
 
 class StartupFormContainer extends Component {
@@ -15,7 +16,9 @@ class StartupFormContainer extends Component {
       startupSharesAvailable: '',
       startupPhotoUrl: '',
       startupStartDate: '',
-      startupEndDate: ''
+      startupEndDate: '',
+      startupSecPic: '',
+      startupBriefDesc: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
@@ -58,7 +61,9 @@ class StartupFormContainer extends Component {
       startupSharesAvailable: '',
       startupPhotoUrl: '',
       startupStartDate: '',
-      startupEndDate: ''
+      startupEndDate: '',
+      startupSecPic: '',
+      startupBriefDesc: ''
     })
   }
 
@@ -85,7 +90,9 @@ class StartupFormContainer extends Component {
         photo_url: this.state.startupPhotoUrl,
         start_date_date: this.state.startupStartDate,
         end_date_date: this.state.startupEndDate,
-        user_id: this.props.user.id
+        user_id: this.props.user.id,
+        sec_pic: this.state.startupSecPic,
+        briefDesc: this.state.startupBriefDesc
       }
       this.props.handleSubmit(formPayload)
       this.handleClearForm()
@@ -254,60 +261,94 @@ class StartupFormContainer extends Component {
     return(
       <form className="callout" onSubmit={this.handleSubmit}>
         {errorDiv}
+        <div className="form-field-string">
         <StartupTextInputField
           label='Name'
           value={this.state.startupName}
           name='startupName'
           handleChange={this.handleChange}
         />
+      </div>
+      <div className="form-field-string">
         <Category
           label='Category'
           value={this.state.startupCategory}
           name='startupCategory'
           handleChange={this.handleChange}
         />
-        <StartupTextInputField
-          label='Description'
-          value={this.state.startupDescription}
-          name='startupDescription'
-          handleChange={this.handleChange}
-        />
-        <StartupTextInputField
-          label='Desired Funding'
-          value={this.state.startupDesiredFunding}
-          name='startupDesiredFunding'
-          handleChange={this.handleChange}
-        />
-        <StartupTextInputField
-          label='Current Funding'
-          value={this.state.startupCurrentFunding}
-          name='startupCurrentFunding'
-          handleChange={this.handleChange}
-        />
-        <StartupTextInputField
-          label='Available Shares'
-          value={this.state.startupSharesAvailable}
-          name='startupSharesAvailable'
-          handleChange={this.handleChange}
-        />
-        <StartupTextInputField
-          label='Photo URL'
-          value={this.state.startupPhotoUrl}
-          name='startupPhotoUrl'
-          handleChange={this.handleChange}
-        />
-        <StartupTextInputField
-          label='Start Date'
-          value={this.state.startupStartDate}
-          name='startupStartDate'
-          handleChange={this.handleChange}
-        />
-        <StartupTextInputField
-          label='End Date'
-          value={this.state.startupEndDate}
-          name='startupEndDate'
-          handleChange={this.handleChange}
-        />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Brief Description'
+            value={this.state.startupBriefDesc}
+            name='startupBriefDesc'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-desc-div">
+          <StartupTextAreaField
+            label='Description'
+            value={this.state.startupDescription}
+            name='startupDescription'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Desired Funding'
+            value={this.state.startupDesiredFunding}
+            name='startupDesiredFunding'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Current Funding'
+            value={this.state.startupCurrentFunding}
+            name='startupCurrentFunding'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Available Shares'
+            value={this.state.startupSharesAvailable}
+            name='startupSharesAvailable'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Photo URL'
+            value={this.state.startupPhotoUrl}
+            name='startupPhotoUrl'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Second Photo URL'
+            value={this.state.startupSecPic}
+            name='startupSecPic'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='Start Date'
+            value={this.state.startupStartDate}
+            name='startupStartDate'
+            handleChange={this.handleChange}
+          />
+        </div>
+        <div className="form-field-string">
+          <StartupTextInputField
+            label='End Date'
+            value={this.state.startupEndDate}
+            name='startupEndDate'
+            handleChange={this.handleChange}
+          />
+        </div>
         <input className="form-button" type='submit' value='Submit'/>
       </form>
     )

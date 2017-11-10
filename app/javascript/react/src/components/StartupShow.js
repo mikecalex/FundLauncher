@@ -66,13 +66,17 @@ class StartupShow extends Component {
   render() {
     return(
       <div className="show-row">
+
+        <div className="company-title">
+          <h1>{this.props.name}</h1>
+        </div>
         <div className="small-12 medium-8 large-8 columns" id="showpicture">
           <p><img className="show" width="460px" height="320px" src={this.props.photo}/></p>
         </div>
 
         <div className="small-12 medium-4 large-4 columns" id="side-nav">
           <ul className="side-nav">
-            <h2>{this.props.name}</h2>
+
             <p>Category: {this.props.category}</p>
             <p>Campaign Start Date: {this.props.start} </p>
             <p>Campaign End Date: {this.props.end} </p>
@@ -100,8 +104,15 @@ class StartupShow extends Component {
         </div>
 
         <div className="small-12 medium-12 large-12 columns">
-          <h4>Description:</h4>
-          <p>{this.props.description}</p>
+          <div className="about">
+            <h4><strong>About</strong></h4>
+          </div>
+          <div className="show-desc">
+            <p><strong>{this.props.description}</strong></p>
+          </div>
+          <div className="show-sec-pic">
+            <img className="sec-pic-show" src={this.props.secPic} />
+          </div>
         </div>
 
       </div>

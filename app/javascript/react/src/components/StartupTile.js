@@ -10,7 +10,8 @@ const StartupTile = props => {
         <img className="thumbnail" size="20x20" src={props.photo} />
         <br/>
         <h5><strong>{props.name}</strong></h5>
-        <p className="desc">{props.description}</p>
+        <p className="desc">{props.brief}</p>
+        {/* <h6 className="category">{props.category}</h6> */}
         <h6 className="date">{props.daysToGo}</h6>
         <div className="circle-perc">
           <CircularProgressbar percentage={props.perc} />

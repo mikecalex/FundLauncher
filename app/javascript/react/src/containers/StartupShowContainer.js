@@ -70,6 +70,7 @@ class StartupShowContainer extends Component {
         photo={this.state.startup.photo_url}
         sharePrice={sharePrice}
         sharePriceCalc={sharePriceCalc}
+        secPic={this.state.startup.sec_pic}
       />
     )
   }

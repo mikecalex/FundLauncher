@@ -31,13 +31,13 @@
 
 
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #FCFCFC;
 }
 
 div.main-app {
   background-color: #FCFCFC;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 div.hero-text h1 {
@@ -47,7 +47,7 @@ div.hero-text h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-family: 'Zefani';
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 5px;
   font-size: 4rem;
 }
@@ -59,7 +59,7 @@ div.hero-text h6 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-family: 'Zefani';
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 5px;
   font-size: 2rem;
 }
@@ -67,6 +67,7 @@ div.hero-text h6 {
 div.row.text-center {
   padding-top: 10px;
   padding-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 //tiles on index
@@ -86,7 +87,7 @@ div.row.text-center {
   text-align: center;
   padding: 0px;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px
 }
@@ -99,6 +100,18 @@ div.row.text-center {
   min-width: -webkit-fill-available;
   bottom: 0;
   position: absolute;
+  max-width: 30%;
+  color: #d6d6d6;
+}
+
+.large-3 h6.category {
+  text-align: left;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  min-width: -webkit-fill-available;
+  bottom: 0;
+  position: absolute;
+  max-width: 30%;
 }
 
 p.desc {
@@ -123,7 +136,7 @@ input.show-input {
 }
 
 #side-nav {
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 div#tiles {
@@ -155,10 +168,15 @@ div#side-category {
 
 div.categorysec {
   min-height: 400px;
-  text-align: center;
+  text-align: left;
   position: relative;
 }
 
 div.cattile {
   padding-top: 20px;
+  padding-left: 70px
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
 }

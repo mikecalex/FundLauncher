@@ -22,7 +22,9 @@ class Api::V1::StartupsController < ApplicationController
       photo_url: params[:photo_url],
       start_date_date: params[:start_date_date],
       end_date_date: params[:end_date_date],
-      user_id: current_user.id
+      user_id: current_user.id,
+      sec_pic: params[:sec_pic],
+      briefDesc: params[:briefDesc]
     )
 
     if startup.save

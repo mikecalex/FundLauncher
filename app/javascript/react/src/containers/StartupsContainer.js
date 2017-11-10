@@ -105,7 +105,6 @@ class StartupsContainer extends Component {
               />
             </Modal>
 
-            <h3>Categories</h3>
           </div>
             <div className="categorysec">
             <div className="cattile">Electronic</div>

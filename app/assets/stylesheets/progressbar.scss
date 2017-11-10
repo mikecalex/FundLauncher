@@ -11,7 +11,7 @@
    *
    * If you're not using "display: flex", you can remove this style.
    */
-  width: 35%;
+  width: 30%;
 }
 
 .CircularProgressbar .CircularProgressbar-path {
@@ -64,5 +64,6 @@ div.circle-perc {
   text-align: center;
   bottom: 0;
   position: absolute;
-  width: 100%
+  width: 100%;
+  padding-bottom: 20px;
 }

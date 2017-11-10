@@ -10,6 +10,13 @@ img.show {
   border-radius: 0%;
   min-height: 500px;
   min-width: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+
+img.sec-pic-show {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .hero-image {
@@ -27,8 +34,10 @@ img.show {
 }
 
 #showpicture {
-  padding-top: 100px;
-  padding-left: 200px;
+  padding-top: 40px;
+  padding-left: 150px;
+  padding-right: 50px;
+  width: 60%;
 }
 
 #profile-photo-container-nav img{
