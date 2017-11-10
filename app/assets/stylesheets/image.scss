@@ -2,6 +2,8 @@ img.thumbnail {
   height: 250px;
   min-width: -webkit-fill-available;
   border-radius: 0%;
+  object-fit: cover;
+  object-position: center;
 }
 
 img.show {
@@ -29,11 +31,26 @@ img.show {
   padding-left: 200px;
 }
 
-#profile-photo-container img {
+#profile-photo-container-nav img{
    max-width: 60px;
    max-height: 90px;
    object-position: center;
    object-fit: cover;
    border-radius: 30%;
    border:1px solid white;
+ }
+
+ ul#profile-photo {
+   text-align: center
+ }
+
+ #profile-photo-container img {
+     max-width: 80px;
+     max-height: 90px;
+     object-position: center;
+     object-fit: cover;
+     border-radius: 30%;
+     border: 1px solid #DAE1E9;
+     min-width: 80px;
+     min-height: 80px;
  }

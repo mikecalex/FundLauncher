@@ -26,6 +26,7 @@
 @import 'form';
 @import 'search';
 @import 'show';
+@import 'loginmodal';
 
 
 body {
@@ -149,4 +150,14 @@ div#side-category {
   border-left: 1px solid #DAE1E9;
   padding-left: 20px;
   margin-top: 20px;
+}
+
+div.categorysec {
+  min-height: 400px;
+  text-align: center;
+  position: relative;
+}
+
+div.cattile {
+  padding-top: 20px;
 }

@@ -25,6 +25,7 @@ div.modal-window {
   text-align: center;
   max-width: 50%;
   min-width: 50%;
+  padding-top: 30px;
 }
 
 div.backdrop {
@@ -33,4 +34,9 @@ div.backdrop {
 
 div.modal {
   text-align: center;
+}
+
+h2.formTitle {
+  
+  padding-bottom: 30px;
 }

@@ -29,7 +29,7 @@
       <section class="top-bar-section">
         <!-- Left Nav Section -->
         <ul class="left">
-          <li><a href="#">Start a New Funding Round</a></li>
+        
         </ul>
         <!-- Right Nav Section -->
         <ul class="right">
@@ -43,8 +43,8 @@
           <li><%- if current_user -%></li>
           <ul class="nav_pic">
             <li><% unless current_user.image.nil? %></li>
-            <div id="profile-photo-container">
-              <li class="nav-profile" id="profile-photo"><%= image_tag current_user.image, { size: "50x80" } %></li>
+            <div id="profile-photo-container-nav">
+              <li class="nav-profile" id="profile-photo-nav"><%= image_tag current_user.image, { size: "50x80" } %></li>
             </div>
             <li><% end %></li>
           </ul>
@@ -56,13 +56,15 @@
             <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
               <h2 id="firstModalTitle">Welcome to FundLauncher!</h2>
               <% if current_user  %>
-              <h3><%= "#{current_user.first_name} #{current_user.last_name} " %></h3>
+              <h3 class="name"><%= "#{current_user.first_name} #{current_user.last_name} " %></h3>
               <ul><% unless current_user.image.nil? %></ul>
                   <div id="profile-photo-container">
                     <ul id="profile-photo"><%= image_tag current_user.image %></ul>
                   </div>
               <ul><% end %></ul>
-              <%= link_to "Logout", logout_path %>
+              <%= link_to "Profile", "/users/#{current_user.id}", class: "profile" %>
+
+              <%= link_to "Logout", logout_path, class: "log-out" %>
               <% else %>
               <%= link_to "Sign in with Google", "/auth/google" %>
               <% end %>

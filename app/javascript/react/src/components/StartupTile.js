@@ -10,6 +10,7 @@ const StartupTile = props => {
         <br/>
         <h5><strong>{props.name}</strong></h5>
         <p className="desc">{props.description}</p>
+        <h6 className="perc">{props.perc} </h6>
         <h6 className="date">{props.daysToGo}</h6>
       </Link>
     </div>

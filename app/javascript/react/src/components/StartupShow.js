@@ -39,9 +39,8 @@ class StartupShow extends Component {
   }
 
   componentDidMount() {
-    let that = this
     RequireScript.get('https://checkout.stripe.com/checkout.js', () => {
-      that.handler = StripeCheckout.configure({
+      this.handler = StripeCheckout.configure({
         key: 'pk_test_QsMG8damJeqqksFgx4bcrasV',
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',

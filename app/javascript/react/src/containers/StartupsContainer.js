@@ -3,6 +3,7 @@ import StartupsIndex from '../components/StartupsIndex'
 import StartupFormContainer from './StartupFormContainer'
 import Modal from '../components/Modal'
 import Ticker from './Ticker'
+import Category from './Category'
 
 class StartupsContainer extends Component {
   constructor(props) {
@@ -104,8 +105,18 @@ class StartupsContainer extends Component {
               />
             </Modal>
 
-            <h5>Categories</h5>
+            <h3>Categories</h3>
           </div>
+            <div className="categorysec">
+            <div className="cattile">Electronic</div>
+            <div className="cattile">Politics</div>
+            <div className="cattile">Games</div>
+            <div className="cattile">Social</div>
+            <div className="cattile">Entertainment</div>
+            <div className="cattile">Finance</div>
+            <div className="cattile">Music</div>
+            <div className="cattile">Other</div>
+            </div>
         </div>
       </div>
     )

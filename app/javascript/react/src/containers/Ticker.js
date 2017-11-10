@@ -61,7 +61,7 @@ class Ticker extends Component {
 
       <div className='container'>
         <div className='row'>
-          <h2>30 Day Bitcoin Price Chart</h2>
+          <h2 className="bit-title">30 Day Bitcoin Price Chart</h2>
         </div>
         <div className='row' onClick={this.handleClick}>
           { !this.state.fetchingData ?
