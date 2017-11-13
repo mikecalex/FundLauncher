@@ -17,11 +17,11 @@ input.form-button:hover {
 }
 
 button.invest-button {
-  max-height: 50px;
-  min-width: 300px;
+  max-height: 45px;
+  min-width: 250px;
   display: inline-block;
   padding: 15px 25px;
-  font-size: 18px;
+  font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -29,7 +29,7 @@ button.invest-button {
   color: #fff;
   background-color: #4CAF50;
   border: none;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 2px #999;
 }
 
 button.invest-button:hover {
@@ -44,22 +44,22 @@ button.invest-button:active {
 
 a.back-button {
   background-color: #008CBA;
-  max-height: 50px;
-  min-width: 280px;
+  max-height: 45px;
+  min-width: 250px;
   display: inline-block;
-  padding: 15px 25px;
-  font-size: 18px;
+  padding: 12px 25px;
+  font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
   border: none;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 2px #999;
 }
 
 a.back-button:hover {
-  background-color: #336EFF;
+  background-color: #007CBB;
 }
 
 a.back-button:active {
@@ -69,7 +69,6 @@ a.back-button:active {
 }
 
 a.search-back-button {
-  padding-left: 30px;
   background-color: #008CBA;
   max-height: 50px;
   min-width: 280px;
@@ -82,5 +81,26 @@ a.search-back-button {
   outline: none;
   color: #fff;
   border: none;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 2px #999;
+}
+
+button.new-form {
+  background-color: #008CBA;
+  max-height: 45px;
+  min-width: 180px;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px #999;
+}
+
+input.radius.search.button {
+  max-height: 25px;
+  font-size: .75rem;
 }

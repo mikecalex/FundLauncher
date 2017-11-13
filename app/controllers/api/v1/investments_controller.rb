@@ -10,44 +10,48 @@ class Api::V1::InvestmentsController < ApplicationController
 
   def show
     investment = Investment.find(params[:id])
-    render json: { investment: investment, charge: charge, user: current_user}
+    render json: { investment: investment, user: current_user}
   end
 
   def create
-    customer = Stripe::Customer.create(
-    :email => params[:email],
-    :source  => params[:id]
-    )
+    token = params[:token]
+    if token
+      begin
+        customer = Stripe::Customer.create(
+        :email => token[:email],
+        :source  => token[:id]
+        )
 
-    charge = Stripe::Charge.create(
-      :customer => customer.id,
-      :amount => params[:amount],
-      :description => "Investment ID",
-      :currency => 'usd'
-    )
+        charge = Stripe::Charge.create(
+          :customer => customer.id,
+          :amount => token[:amount],
+          :description => "Investment ID",
+          :currency => 'usd'
+        )
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to new_charge_path
+        return
+      end
 
-      # binding.pry
+        # binding.pry
 
-    investment = Investment.new(
-      :customer => customer.id,
-      payment_id: charge.id,
-      amount: params[:amount],
-      paymentType: params[:type],
-      user_id: params[:user_id],
-      startup_id: params[:startup_id],
-      currency: params[:currency]
-    )
+      investment = Investment.new(
+        customer: customer.id,
+        payment_id: charge.id,
+        amount: token[:amount],
+        payment_category: token[:type],
+        user_id: current_user.id,
+        startup_id: params[:startup_id],
+        currency: token[:currency]
+      )
 
-
-    if investment.save
-      render json: { investment: investment }
-    else
-      render json: { error: investment.errors.full_messages }, status: :unprocessable_entity
+      if investment.save
+        render json: { investment: investment }
+      else
+        render json: { error: investment.errors.full_messages }, status: :unprocessable_entity
+      end
     end
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
   end
 
 end

@@ -5,7 +5,7 @@ import CircularProgressbar from '../containers/CircularProgressbar'
 const StartupTile = props => {
 
   return(
-    <div className="small-1 medium-3 large-3 columns">
+    <div className="small-12 medium-3 large-3 columns">
       <Link to={`/startups/${props.id}`}>
         <img className="thumbnail" size="20x20" src={props.photo} />
         <br/>

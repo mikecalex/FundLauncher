@@ -1,5 +1,5 @@
 body h4 {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 30px;
   border-top: 1px solid #DAE1E9;
   margin-top: 10px;
@@ -24,6 +24,18 @@ div.show-row {
 ul.side-nav {
   text-align: left;
   margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1px;
+}
+
+p.details {
+  font-size: .85rem;
+}
+
+strong, b {
+    font-weight: bold;
+    line-height: inherit;
+    font-size: 1.5rem;
 }
 
 div.company-title {
@@ -33,4 +45,14 @@ div.company-title {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+
+input.show-input {
+  max-width: 175px
+}
+
+div#side-nav {
+  padding-top: 15px;
 }

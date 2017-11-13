@@ -5,13 +5,16 @@ class UserShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {}
+      user: {},
+      investments: {}
     }
     this.getUser = this.getUser.bind(this)
+    // this.getInvestments = this.getInvestments.bind(this)
   }
 
   componentDidMount() {
     this.getUser()
+    // this.getInvestments()
   }
 
   getUser() {
@@ -25,6 +28,19 @@ class UserShowContainer extends Component {
         this.setState({ user: json.user });
       });
   }
+
+  // getInvestments() {
+  //   let investmentId = this.props.match.params.id
+  //   fetch(`/api/v1/investments/${investmentId}`, {
+  //     headers: { 'Content-Type': 'application/json' },
+  //     credentials: 'same-origin'
+  //   })
+  //   .then(response => response.json())
+  //   .then(json => {
+  //     this.setState({ investment: json.investment })
+  //   });
+  // }
+
   render() {
 
     return(
@@ -34,6 +50,7 @@ class UserShowContainer extends Component {
         lastName={this.state.user.last_name}
         image={this.state.user.image}
         email={this.state.user.email}
+        investments={this.state.investments}
       />
     )
   }
