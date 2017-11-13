@@ -90,7 +90,7 @@ class StartupsContainer extends Component {
             startups={this.state.startups}
           />
         </div>
-        <div className="small-0 medium-4 large-4 columns" id="side-category">
+        <div className="small-0 medium-2 large-4 columns" id="side-category">
           <div className="modal">
             <button className="new-form" onClick={this.toggleModal}>
               Start a New Funding Round
@@ -107,6 +107,7 @@ class StartupsContainer extends Component {
 
           </div>
             <div className="categorysec">
+            <div className="cattile">Tech</div>
             <div className="cattile">Electronic</div>
             <div className="cattile">Politics</div>
             <div className="cattile">Games</div>
@@ -114,7 +115,6 @@ class StartupsContainer extends Component {
             <div className="cattile">Entertainment</div>
             <div className="cattile">Finance</div>
             <div className="cattile">Music</div>
-            <div className="cattile">Other</div>
             </div>
         </div>
       </div>

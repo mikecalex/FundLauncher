@@ -12,12 +12,12 @@ class Modal extends Component {
 
    const backdropStyle = {
      position: 'fixed',
-     top: 20,
+     top: 15,
      bottom: 0,
      left: 0,
      right: 0,
      backgroundColor: 'rgba(0,0,0,0.3)',
-     padding: 50
+     padding: 40
    };
 
    const modalStyle = {
@@ -25,8 +25,9 @@ class Modal extends Component {
      borderRadius: 5,
      maxWidth: 500,
      minHeight: 100,
+     maxHeight: 720,
      margin: '0 auto',
-     paddingTop: 25,
+     paddingTop: 5,
 
    };
 
