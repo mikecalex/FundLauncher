@@ -71,6 +71,12 @@ div.row.text-center {
   font-size: .1rem;
 }
 
+strong, b {
+    font-weight: bold;
+    line-height: inherit;
+    font-size: 1rem;
+}
+
 //tiles on index
 #tile-container {
   display: flex;

@@ -21,6 +21,7 @@ class Startup < ApplicationRecord
   end
 
   CATEGORIES = [
+    "Tech",
     "Electronic",
     "Politics",
     "Games",
