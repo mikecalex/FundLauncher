@@ -83,14 +83,14 @@ class StartupsContainer extends Component {
         <Ticker />
 
         <div className="row text-center">
-          <h3><strong>Featured Startups</strong></h3>
+          <h3 className="featured-title"><strong>Featured Startups</strong></h3>
         </div>
         <div className="small-12 medium-8 large-8 columns" id="tiles">
           <StartupsIndex
             startups={this.state.startups}
           />
         </div>
-        <div className="small-12 medium-4 large-4 columns" id="side-category">
+        <div className="small-0 medium-4 large-4 columns" id="side-category">
           <div className="modal">
             <button className="new-form" onClick={this.toggleModal}>
               Start a New Funding Round

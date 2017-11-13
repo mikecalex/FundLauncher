@@ -34,7 +34,7 @@
         <ul class="right">
           <li class="search">
             <%= form_tag(search_startups_path, method: :get) do %>
-            <%= submit_tag "Search", class: "radius button", :name => nil %>
+            <%= submit_tag "Search", class: "radius search button", :name => nil %>
             <%= search_field_tag :search, params[:search], placeholder: "Search Projects", required: "required"%>
             <% end %>
           </li>

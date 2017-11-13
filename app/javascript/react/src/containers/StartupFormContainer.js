@@ -295,7 +295,7 @@ class StartupFormContainer extends Component {
         </div>
         <div className="form-field-string">
           <StartupTextInputField
-            label='Desired Funding'
+            label='Desired Funding: $'
             value={this.state.startupDesiredFunding}
             name='startupDesiredFunding'
             handleChange={this.handleChange}
@@ -303,7 +303,7 @@ class StartupFormContainer extends Component {
         </div>
         <div className="form-field-string">
           <StartupTextInputField
-            label='Current Funding'
+            label='Current Funding: $'
             value={this.state.startupCurrentFunding}
             name='startupCurrentFunding'
             handleChange={this.handleChange}

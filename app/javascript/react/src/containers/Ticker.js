@@ -70,7 +70,7 @@ class Ticker extends Component {
           <i className="fa">&#xf103;</i>
         </div>
         <Collapse isOpened={this.state.isOpened}>
-          <div className='row'>
+          <div className='row-space'>
             <div className='popup'>
               {this.state.hoverLoc ? <ToolTip hoverLoc={this.state.hoverLoc} activePoint={this.state.activePoint}/> : null}
             </div>
