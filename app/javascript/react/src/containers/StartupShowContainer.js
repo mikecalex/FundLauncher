@@ -71,6 +71,7 @@ class StartupShowContainer extends Component {
         sharePrice={sharePrice}
         sharePriceCalc={sharePriceCalc}
         secPic={this.state.startup.sec_pic}
+        currentUser={this.props.currentUser}
       />
     )
   }

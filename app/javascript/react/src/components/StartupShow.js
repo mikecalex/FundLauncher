@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import RequireScript from 'scriptjs';
+import SweetAlert from 'react-bootstrap-sweetalert'
 
 class StartupShow extends Component {
   constructor(props){
     super(props)
     this.state = {
       numShares: '',
-      investments: []
+      investments: [],
+      alertLogIn: false,
+      alertShares: false
     }
     this.showPayDialog = this.showPayDialog.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.calculateAmount = this.calculateAmount.bind(this)
     this.handleToken = this.handleToken.bind(this)
+    this.hideAlertLogIn = this.hideAlertLogIn.bind(this)
+    this.hideAlertShares = this.hideAlertShares.bind(this)
   }
 
   calculateAmount() {
@@ -30,13 +35,35 @@ class StartupShow extends Component {
   }
 
   showPayDialog(e) {
-    if(this.handler){
-      this.handler.open({
-        name: this.props.name,
-        amount: this.calculateAmount(),
-        description: 'Shares'
-      })
+    if (!this.props.currentUser) {
+      this.setState({
+        alertLogIn: !this.state.alertLogIn
+      });
+    } else if (this.state.numShares < 1) {
+        this.setState({
+          alertShares: !this.state.alertShares
+        });
+      } else {
+      if(this.handler){
+        this.handler.open({
+          name: this.props.name,
+          amount: this.calculateAmount(),
+          description: 'Shares'
+        })
+      }
     }
+  }
+
+  hideAlertLogIn() {
+    this.setState({
+      alertLogIn: !this.state.alertLogIn
+    });
+  }
+
+  hideAlertShares() {
+    this.setState({
+      alertShares: !this.state.alertShares
+    });
   }
 
   handleToken(token){
@@ -107,6 +134,18 @@ class StartupShow extends Component {
             </div>
           </ul>
         </div>
+
+        <SweetAlert
+          show={this.state.alertLogIn}
+          title="You must sign in first!"
+          onConfirm={this.hideAlertLogIn}
+        />
+
+        <SweetAlert
+          show={this.state.alertShares}
+          title="You must specify a number of shares!"
+          onConfirm={this.hideAlertShares}
+        />
 
         <div className="small-12 medium-12 large-12 columns">
           <div className="about">
