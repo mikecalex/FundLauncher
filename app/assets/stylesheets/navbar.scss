@@ -45,12 +45,16 @@ ul.right {
 .top-bar-section a.icon {
     color: white;
     text-decoration: none;
-    line-height: inherit;
     font-size: 30px;
     max-height: 40px;
     float: right;
-    padding-right: 10px;
     margin-top: 0px;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    padding: 0 15px;
+    line-height: 38px;
+    background: #333333;
 }
 
 .top-bar .name h1 a {
