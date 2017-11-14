@@ -4,6 +4,7 @@ import StartupFormContainer from './StartupFormContainer'
 import Modal from '../components/Modal'
 import Ticker from './Ticker'
 import Category from './Category'
+import SweetAlert from 'react-bootstrap-sweetalert'
 
 class StartupsContainer extends Component {
   constructor(props) {
@@ -11,16 +12,30 @@ class StartupsContainer extends Component {
     this.state = {
       startups: [],
       user: {},
-      isOpen: false
+      isOpen: false,
+      alert: false
     }
     this.getStartups = this.getStartups.bind(this)
     this.getUser = this.getUser.bind(this)
     this.addNewStartup = this.addNewStartup.bind(this)
+    this.hideAlert = this.hideAlert.bind(this)
   }
 
   toggleModal = () => {
+    if (!this.props.currentUser) {
+      this.setState({
+        alert: !this.state.alert
+      });
+      } else {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    }
+  }
+
+  hideAlert = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      alert: !this.state.alert
     });
   }
 
@@ -71,6 +86,7 @@ class StartupsContainer extends Component {
     let handleSubmit = (formPayload) => {
       this.addNewStartup(formPayload)
     }
+
     return(
       <div className="main-app">
         <div className="hero-image">
@@ -81,7 +97,6 @@ class StartupsContainer extends Component {
         </div>
 
         <Ticker />
-
         <div className="row text-center">
           <h3 className="featured-title"><strong>Featured Startups</strong></h3>
         </div>
@@ -91,8 +106,13 @@ class StartupsContainer extends Component {
           />
         </div>
         <div className="small-0 medium-2 large-4 columns" id="side-category">
+          <SweetAlert
+            show={this.state.alert}
+            title="You must sign in first!"
+            onConfirm={this.hideAlert}
+          />
           <div className="modal">
-            <button className="new-form" onClick={this.toggleModal}>
+            <button className="new-form" onClick={this.toggleModal} >
               Start a New Funding Round
             </button>
 
@@ -101,7 +121,6 @@ class StartupsContainer extends Component {
               <StartupFormContainer
                 user={this.state.user}
                 handleSubmit={handleSubmit}
-                currentUser={this.props.currentUser}
               />
             </Modal>
 
@@ -117,6 +136,7 @@ class StartupsContainer extends Component {
             <div className="cattile">Music</div>
             </div>
         </div>
+
       </div>
     )
   }
