@@ -74,7 +74,7 @@ div.row.text-center {
 strong, b {
     font-weight: bold;
     line-height: inherit;
-    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 //tiles on index
@@ -173,7 +173,7 @@ div#side-category {
   margin-top: 20px;
 }
 
-div.categorysec {
+div.category-field {
   min-height: 1000px;
   text-align: left;
   position: relative;
@@ -183,6 +183,7 @@ div.cattile {
   padding-top: 15px;
   padding-left: 30px;
   font-size: .8rem;
+  text-align: left
 }
 
 h3 {
