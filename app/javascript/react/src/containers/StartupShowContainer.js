@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import StartupShow from '../components/StartupShow';
+import StartupShow from './StartupShow';
 
 class StartupShowContainer extends Component {
   constructor(props) {

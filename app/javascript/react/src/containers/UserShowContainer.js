@@ -9,12 +9,12 @@ class UserShowContainer extends Component {
       investments: {}
     }
     this.getUser = this.getUser.bind(this)
-    // this.getInvestments = this.getInvestments.bind(this)
+    this.getInvestments = this.getInvestments.bind(this)
   }
 
   componentDidMount() {
     this.getUser()
-    // this.getInvestments()
+
   }
 
   getUser() {
@@ -29,17 +29,17 @@ class UserShowContainer extends Component {
       });
   }
 
-  // getInvestments() {
-  //   let investmentId = this.props.match.params.id
-  //   fetch(`/api/v1/investments/${investmentId}`, {
-  //     headers: { 'Content-Type': 'application/json' },
-  //     credentials: 'same-origin'
-  //   })
-  //   .then(response => response.json())
-  //   .then(json => {
-  //     this.setState({ investment: json.investment })
-  //   });
-  // }
+  getInvestments() {
+    let investmentId = this.props.match.params.id
+    fetch(`/api/v1/investments/${investmentId}`, {
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin'
+    })
+    .then(response => response.json())
+    .then(json => {
+      this.setState({ investment: json.investment })
+    });
+  }
 
   render() {
 
