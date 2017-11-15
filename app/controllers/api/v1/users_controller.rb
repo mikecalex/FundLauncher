@@ -9,4 +9,8 @@ class Api::V1::UsersController < ApplicationController
     user = User.find(params[:id])
     render json: { user: current_user}
   end
+
+  def investments
+
+  end
 end
