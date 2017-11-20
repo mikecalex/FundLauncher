@@ -29,18 +29,6 @@ class UserShowContainer extends Component {
       });
   }
 
-  getInvestments() {
-    let investmentId = this.props.match.params.id
-    fetch(`/api/v1/investments/${investmentId}`, {
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'same-origin'
-    })
-    .then(response => response.json())
-    .then(json => {
-      this.setState({ investment: json.investment })
-    });
-  }
-
   render() {
 
     return(
