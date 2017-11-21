@@ -71,7 +71,8 @@ class StartupShow extends Component {
       method: 'POST',
       body: JSON.stringify({
         token: token,
-        startup_id: this.props.startupId
+        startup_id: this.props.startupId,
+        startupName: this.props.name
       }),
       headers: { 'Content-Type': 'application/json' },
       credentials: 'same-origin'

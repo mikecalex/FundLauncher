@@ -1,9 +1,6 @@
 class Api::V1::InvestmentsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def new
-  end
-
   def index
     render json: Investment.all
   end
@@ -34,8 +31,6 @@ class Api::V1::InvestmentsController < ApplicationController
         return
       end
 
-        # binding.pry
-
       investment = Investment.new(
         customer: customer.id,
         payment_id: charge.id,
@@ -43,7 +38,8 @@ class Api::V1::InvestmentsController < ApplicationController
         payment_category: token[:type],
         user_id: current_user.id,
         startup_id: params[:startup_id],
-        currency: token[:currency]
+        currency: token[:currency],
+        startupName: params[:startupName]
       )
 
       if investment.save
