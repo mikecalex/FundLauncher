@@ -12,6 +12,7 @@ gem 'figaro'
 gem 'foundation-rails'
 gem 'better_date_picker'
 gem 'stripe'
+gem "active_model_serializers"
 
 group :development do
   gem 'listen', '~> 3.0.5'

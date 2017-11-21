@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import UserShow from '../components/UserShow'
+import UserIndex from '../components/UserIndex'
 
 class UserShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {},
-      investments: {}
+      user: {
+        investments: []
+      }
     }
     this.getUser = this.getUser.bind(this)
-    this.getInvestments = this.getInvestments.bind(this)
   }
 
   componentDidMount() {
     this.getUser()
-
   }
 
   getUser() {
@@ -26,20 +25,18 @@ class UserShowContainer extends Component {
       .then(response => response.json())
       .then(json => {
         this.setState({ user: json.user });
-      });
+    });
   }
 
   render() {
 
     return(
-      <UserShow
-        id={this.state.user.id}
-        firstName={this.state.user.first_name}
-        lastName={this.state.user.last_name}
-        image={this.state.user.image}
-        email={this.state.user.email}
-        investments={this.state.investments}
-      />
+      <div className="user-page">
+        <div className="user-name">{this.state.user.first_name} {this.state.user.last_name}</div>
+        <UserIndex
+          investments={this.state.user.investments}
+        />
+      </div>
     )
   }
 }

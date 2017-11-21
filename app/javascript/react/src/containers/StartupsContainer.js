@@ -62,7 +62,7 @@ class StartupsContainer extends Component {
       .then(response => response.json())
       .then(json => {
         this.setState({ user: json });
-      });
+    });
   }
 
   getStartups() {
@@ -192,11 +192,10 @@ class StartupsContainer extends Component {
   }
 
   render() {
-
     let handleSubmit = (formPayload) => {
       this.addNewStartup(formPayload)
     }
-
+  
     return(
       <div className="main-app">
         <div className="hero-image">
