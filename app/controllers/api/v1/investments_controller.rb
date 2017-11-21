@@ -39,7 +39,8 @@ class Api::V1::InvestmentsController < ApplicationController
         user_id: current_user.id,
         startup_id: params[:startup_id],
         currency: token[:currency],
-        startupName: params[:startupName]
+        startupName: params[:startupName],
+        sharesBought: params[:sharesBought]
       )
 
       if investment.save

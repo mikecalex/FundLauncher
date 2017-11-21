@@ -99,7 +99,6 @@ class StartupFormContainer extends Component {
     }
   }
 
-
   handleNameChange(event) {
     this.validateNameChange(event.target.value)
     this.setState({ startupName: event.target.value })

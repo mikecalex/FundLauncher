@@ -72,7 +72,8 @@ class StartupShow extends Component {
       body: JSON.stringify({
         token: token,
         startup_id: this.props.startupId,
-        startupName: this.props.name
+        startupName: this.props.name,
+        sharesBought: this.state.numShares
       }),
       headers: { 'Content-Type': 'application/json' },
       credentials: 'same-origin'

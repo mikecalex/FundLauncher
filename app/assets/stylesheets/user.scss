@@ -4,7 +4,77 @@ div.user-page {
   font-family: 'Montserrat', sans-serif;
 }
 
-h2.user-name {
+div.user-name-sec {
+  min-height: 250px;
+  border-bottom: 1px solid #DAE1E9;
+}
+
+div.user-name {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+div.investment-title {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  padding-top: 15px;
+}
+
+img.user-image {
+  max-width: 80px;
+  max-height: 90px;
+  border-radius: 30%;
+  border: 1px solid #DAE1E9;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+div.profile-page-pic {
+  text-align: center;
+  padding-top: 15px;
+}
+
+div.user-email {
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bolder;
+}
+
+h2.startup-name {
+  text-align: center
+}
+
+div#investment-tile.small-12.medium-2.large-2.columns {
+  padding-top: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 20px;
+  max-width: 1200px;
+  min-width: 750px;
+  background-color: #FCFCFC;
+  max-height: 200px;
+  min-height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#user-tile-container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin: 0px;
+}
+
+h5.invest-amount {
+  text-align: left;
+}
+
+h5.invest-date {
+  text-align: left;
+}
+
+h5.invest-shares {
+  text-align: left;
 }
