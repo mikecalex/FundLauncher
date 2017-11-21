@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :investments
+  has_many :investments, -> { order('created_at DESC') }
   has_many :start_ups, through: :investments
 
   validates :first_name, presence: true

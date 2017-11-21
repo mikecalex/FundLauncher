@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class ToolTip extends Component {
 
   render() {

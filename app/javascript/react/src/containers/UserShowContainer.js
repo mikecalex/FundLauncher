@@ -29,10 +29,16 @@ class UserShowContainer extends Component {
   }
 
   render() {
-
     return(
       <div className="user-page">
-        <div className="user-name">{this.state.user.first_name} {this.state.user.last_name}</div>
+        <div className="user-name-sec">
+          <div className="user-name">{this.state.user.first_name} {this.state.user.last_name}</div>
+          <div className="profile-page-pic">
+            <img className="user-image" src={this.state.user.image}/>
+          </div>
+          <div className="user-email">{this.state.user.email}</div>
+        </div>
+        <div className="investment-title">Investing History</div>
         <UserIndex
           investments={this.state.user.investments}
         />

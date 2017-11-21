@@ -9,4 +9,5 @@ class Investment < ActiveRecord::Base
   validates :currency, presence: true
   validates :payment_category, presence: true
   validates :startupName, presence: true
+  validates :sharesBought, presence: true
 end
