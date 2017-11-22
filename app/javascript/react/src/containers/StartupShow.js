@@ -71,6 +71,7 @@ class StartupShow extends Component {
       method: 'POST',
       body: JSON.stringify({
         token: token,
+        user_id: this.props.userId,
         startup_id: this.props.startupId,
         startupName: this.props.name,
         sharesBought: this.state.numShares
