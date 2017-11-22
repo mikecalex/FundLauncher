@@ -1,7 +1,7 @@
 div.user-page {
-  margin-left: 10px;
   padding-top: 100px;
   font-family: 'Montserrat', sans-serif;
+  background-color: #FAFAFA;
 }
 
 div.user-name-sec {
@@ -12,7 +12,7 @@ div.user-name-sec {
 div.user-name {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
@@ -49,11 +49,11 @@ h2.startup-name {
 
 div#investment-tile.small-12.medium-2.large-2.columns {
   padding-top: 20px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 30px;
+  margin-right: 30px;
   margin-top: 20px;
-  max-width: 1200px;
-  min-width: 750px;
+  max-width: 600px;
+  min-width: 600px;
   background-color: #FCFCFC;
   max-height: 200px;
   min-height: 200px;
@@ -64,17 +64,21 @@ div#investment-tile.small-12.medium-2.large-2.columns {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
-  margin: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 h5.invest-amount {
   text-align: left;
+  font-size: .95rem;
 }
 
 h5.invest-date {
   text-align: left;
+  font-size: .95rem;
 }
 
 h5.invest-shares {
   text-align: left;
+  font-size: .95rem;
 }
